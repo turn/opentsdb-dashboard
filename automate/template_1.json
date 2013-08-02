@@ -1,0 +1,51 @@
+{
+  "filename" : "output_new",
+  "columns":2,
+  "dashboard_title":"DashboardTitle",
+  "refresh":3000,
+  "default_site":"Default Datacenter(if any), else leave empty",
+  "default_location":"Default Serverclass(if any), else leave empty",
+  "start_time":"2d-ago",
+  "end_time":"1d-ago",
+  "info":"author.info",
+  "panel_objects":
+  [
+    {
+      "title":"PanelObj Title1",
+      "height":800,
+      "width":700,
+      "graph_objects":
+      [
+        {"path":"graph1.json"}
+      ]
+    },
+    {
+      "title":"PanelObj Title2",
+      "height":800,
+      "width":700,
+      "graph_objects":
+      [
+        {"path":"graph2.json"}
+      ]
+    },
+    {
+      "title":"PanelObj Title3",
+      "height":800,
+      "width":700,
+      "graph_objects":
+      [
+        {"path":"graph1.json"},
+        {"path":"graph3.json"}
+      ]
+    },
+    {
+      "title":"PanelObj Title4",
+      "height":800,
+      "width":700,
+      "graph_objects":
+      [
+        {"path":"graph4.json"}
+      ]
+    }
+  ]
+}

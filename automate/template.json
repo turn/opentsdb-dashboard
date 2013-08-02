@@ -1,0 +1,26 @@
+{
+  "filename" : "",
+  "columns":2,
+  "dashboard_title":"DashboardTitle",
+  "refresh":3000,
+  "default_site":"Default site(if any), else leave empty",
+  "default_location":"Default location(if any), else leave empty",
+  "start_time":"2d-ago",
+  "end_time":"1d-ago",
+  "info":"author.info",
+  "panel_objects":
+  [
+    {
+      "title":"PanelObj Title",
+      "height":800,
+      "width":700,
+      "graph_objects":
+      [
+        {"path":"graph1.json"},
+        {"path":"graph2.json"},
+        {"path":"graph3.json"},
+        {"path":"graph4.json"}
+      ]
+    }
+  ]
+}

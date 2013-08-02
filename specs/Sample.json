@@ -1,0 +1,52 @@
+{
+"dashboard_properties":
+{
+   "title":"DashboardTitle",
+   "column":2,
+   "info":
+{
+"author": "Deepak Jha <djha@turn.com",
+ "team":"SRE",
+"copyright":" Copyright (c) 2013 Turn, Inc. All Rights Reserved"
+}
+,
+   "refesh_interval":3000,
+   "location":"Default Location(if any), else leave empty",
+   "site":"Default Site(if any), else leave empty",
+   "start_time":"2d-ago",
+   "end_time":"1d-ago"
+},
+"panel_objects":
+  [
+{
+  "title":"PanelObj Title","height":"800","width":"700",
+  "graph_objects":
+     [
+      { "start_time":"","end_time":"", "title":"","tooltip":"","height":"400","width":"",
+"datastream_objects": [ { "metric_name":"df.bytes.total", "tags": [ {"tagkey":"Location","tagvalue":"*"}, {"tagkey":"Site","tagvalue":"*"} ], "aggregation":"avg", "scale":"", "gnubox":"", "alias":",TAG=Location", "downsampling":"", "nodisplay":"false", "filter":"none:1", "rate":"" } ],
+"style": {"flip":"","grid":"","outstyle":"lines","smooth":""},
+"axes": {"yformat":"%1.1s %c"},
+"key": { "key":" out bottom center horiz" } }
+,
+     { "start_time":"","end_time":"", "title":"","tooltip":"","height":"400","width":"",
+"datastream_objects": [ { "metric_name":"df.bytes.total", "tags": [ {"tagkey":"Location","tagvalue":"*"}, {"tagkey":"Site","tagvalue":"*"} ], "aggregation":"avg", "scale":"", "gnubox":"", "alias":",TAG=Location", "downsampling":"", "nodisplay":"false", "filter":"none:1", "rate":"" } ],
+"style": {"flip":"","grid":"","outstyle":"lines","smooth":""},
+"axes": {"yformat":"%1.1s %c","yrange":"[0:]"},
+"key": { "key":" out bottom center horiz" } }
+,
+     { "start_time":"","end_time":"", "title":"","tooltip":"","height":"400","width":"",
+"datastream_objects": [ { "metric_name":"df.bytes.total", "tags": [ {"tagkey":"Location","tagvalue":"*"}, {"tagkey":"Site","tagvalue":"*"} ], "aggregation":"avg", "scale":"", "gnubox":"", "alias":",TAG=Location", "downsampling":"", "nodisplay":"false", "filter":"none:1", "rate":"" } ],
+"style": {"flip":"","grid":"","outstyle":"lines","smooth":""},
+"axes": {"yformat":"%1.1s %c"},
+"key": { "key":" out bottom center horiz" } }
+,
+     { "start_time":"","end_time":"", "title":"","tooltip":"","height":"400","width":"",
+"datastream_objects": [ { "metric_name":"df.bytes.total", "tags": [ {"tagkey":"Location","tagvalue":"*"}, {"tagkey":"Site","tagvalue":"*"} ], "aggregation":"avg", "scale":"", "gnubox":"", "alias":",TAG=Location,Site", "downsampling":"", "nodisplay":"false", "filter":"none:1", "rate":"" } ],
+"style": {"flip":"","grid":"","outstyle":"lines","smooth":""},
+"axes": {"yformat":"%1.1s %c"},
+"key": { "key":" out bottom center horiz" } }
+
+     ]
+}
+  ]
+}
