@@ -1,0 +1,66 @@
+<!doctype html>
+<html>
+  <head>
+    <title>Dashboard</title>
+    <style type="text/css">
+      html, body { margin: 0; padding: 0; }
+      * { background: black; color: white;
+        font-family: monospace; font-size: 12pt;
+      }
+      a { text-decoration: none; border: none; }
+
+      h1, h2, h3 { margin: 3px; padding: 0; text-transform: capitalize; }
+      h1, input { font-size: 14pt; font-weight: bold; }
+      h1 { border-bottom: 3px white solid; margin: 0 0 5px 0; padding: 3px; }
+      h2 { font-weight: bold; }
+      h3 { font-weight: normal; padding-left: 5px; }
+      input, select { background: #444; border: none; color: white;
+        margin-right: 0.5em; font-family: monospace; }
+      h1 form { display: inline; text-transform: lowercase; }
+      #time { position: absolute; top: 0; right: 0; padding: 5px; margin: 0; }
+      #contents td { vertical-align: top; }
+      img.loading { background: url('spinner.gif') no-repeat center; }
+      #footer { font-size: 8pt; text-align: center; font-style: italic;
+        color: #ccc; }
+      p.error { color: #dd4422 !important; font-size: 30pt !important;
+        font-style: normal !important; margin: 8em 0 !important;}
+      .qtip-content { line-height: 1.25em !important; font-size: 9pt !important;
+	    font-family: sans-serif; background: #333; }
+    </style>
+
+    <link type="text/css" rel="stylesheet" href="jquery.qtip.min.css" />
+    <script type="application/javascript" src="jquery.min.js"></script>
+    <script type="application/javascript" src="jquery.qtip.min.js"></script>
+    <script type="application/javascript" src="tsdb.js"></script>
+  </head>
+
+  <body>
+    <h1>
+       Dashboard on
+      <form>
+        <select name="url" id="url" onchange="dashboard.change(this);">
+          <option value="">pick one</option>
+        </select>
+        for
+        <input type="text" name="fval1" id="fval1" size="7" maxsize="4" placeholder="Host"> 
+        <input type="text" name="fval2" id="fval1" size="7" maxsize="4" placeholder="DC"> 
+        for the last
+        <input type="text" name="from" id="from" size="7" />
+        Smooth<input type="checkbox" name="smooth" id="smooth" value="csplines" />
+        Flip<input type="checkbox" name="flip" id="flip" value="true" />
+        <input type="submit" value="go!" />
+      </form>
+
+      <p id="time"></p>
+    </h1>
+
+    <table id="contents" border="0" width="100%">
+      <tbody><tr></tr></tbody>
+    </table>
+
+    <p id="footer"></p>
+    <script type="application/javascript">
+      dashboard.create();
+    </script>
+  </body>
+</html>
