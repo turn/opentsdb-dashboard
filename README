@@ -1,0 +1,48 @@
+OpenTSDB Dashboard
+------------------------------------
+
+Generating Dashboard JSON files
+---------------------------------
+1) Go to the openTSDB and generate a graph the way you want it to be.
+2) Click on the JSON tab, this will show you the JSON which generated the graph. Copy this JSON and store it in a file.
+3) Repeat step2 for all other graphs which you want to see in the dashboard. Save all of them in separate file.
+4) Copy the template.json to include the path for your graph. Also edit the default_site , default_location to the value you want to. You can leave it blank if you do not want a default value. I've added two templates for two different dashboard layouts.
+5) Go to the automate directory and execute the generate.py in the following format
+   python generate.py <TEMPLATE_FILENAME> <OUTPUT_FILENAME>
+6) Copy the <OUTPUT_FILENAME> to the DASHBOARDS_DIR.
+
+Setting up the Dashboard  (Assume Opentsdb running etc.)
+--------------------------------
+
+1) Copy the dashboard content in the directory.
+2) Edit the config file to substitute the values of filter1 and filter2. You can use these filters to see the dashboard based on their values.
+3) Execute build.sh and pass config file as command line argument. This will update the values of filter1 and filter2 from index.html and tsdb.js.
+   eg: If I set the value of filter1 to be Host and filter2 to be Location in the config file, then   executing the command ./build.sh config will update the content of
+
+   index.html
+   -----------
+   <input type="text" name="fval1" id="fval1" size="7" maxsize="4" placeholder="filter1"> 
+   <input type="text" name="fval2" id="fval1" size="7" maxsize="4" placeholder="filter2"> 
+
+   To
+   <input type="text" name="fval1" id="fval1" size="7" maxsize="4" placeholder="Host"> 
+   <input type="text" name="fval2" id="fval1" size="7" maxsize="4" placeholder="Location"> 
+   
+   AND
+
+   tsdb.js
+   -------
+   var tsdb_filter = {
+    FILTER1: "filter1",
+    FILTER2: "filter2",
+   };
+   To
+   var tsdb_filter = {
+    FILTER1: "Host",
+    FILTER2: "Location",
+   };
+
+4) Update the value of OPENTSDB_URL and DASHBOARDS_DIR in tsdb.js
+5) You should see the dashboards in the dropdown. 
+
+
