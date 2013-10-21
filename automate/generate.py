@@ -40,18 +40,18 @@ else:
 
 def build_dashboard_properties(data,decoder):
   global op_filename
-  columns = 2
+  column = 2
   info = ""
-  dashboard_title = "Dummy"
+  title = "Dummy"
   refresh_interval = 300
   dc = "*"
   sclass = "*"
   start_time = "12h-ago"
   end_time = ""
-  if data['columns']:
-    columns = data['columns']
-  if data['dashboard_title']:
-    dashboard_title = data['dashboard_title']
+  if data['column']:
+    column = data['column']
+  if data['title']:
+    dashboard_title = data['title']
   if data['refresh']:
     refresh_interval = data['refresh']
   if data['default_dc']:
@@ -66,10 +66,10 @@ def build_dashboard_properties(data,decoder):
     content = open(data['info'],"r").read()
     info = json.loads(json.dumps(content))
   return "\"dashboard_properties\":\n"+\
-             "{\n"+"   \"title\":\"" + dashboard_title + "\",\n" +\
-             "   \"column\":" + str(columns) + ",\n" +\
+             "{\n"+"   \"title\":\"" + title + "\",\n" +\
+             "   \"column\":" + str(column) + ",\n" +\
              "   \"info\":\n" + str(info) + ",\n" +\
-             "   \"refesh\":" + str(refresh_interval) + ",\n" +\
+             "   \"refresh\":" + str(refresh_interval) + ",\n" +\
              "   \"dc\":\"" + dc + "\",\n" +\
              "   \"sclass\":\"" + sclass + "\",\n" +\
              "   \"start_time\":\"" + str(start_time) + "\",\n" +\
