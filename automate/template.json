@@ -1,7 +1,7 @@
 {
   "filename" : "",
-  "columns":2,
-  "dashboard_title":"DashboardTitle",
+  "column":2,
+  "title":"DashboardTitle",
   "refresh":3000,
   "default_site":"Default site(if any), else leave empty",
   "default_location":"Default location(if any), else leave empty",
